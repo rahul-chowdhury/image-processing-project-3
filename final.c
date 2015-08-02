@@ -1,8 +1,9 @@
 #include<stdlib.h>
 #include<stdio.h>
 #include<string.h>
+#define MAX_SIZE MAX_SIZE0
 
-int img[1000][1000],duplicate[1000][1000];
+int img[MAX_SIZE][MAX_SIZE],duplicate[MAX_SIZE][MAX_SIZE];
 int height=0,width=0,pixel=0;
 int top=-1;
 
@@ -13,7 +14,7 @@ struct vertex
 	int j;
 };
 
-struct vertex hull[10000];
+struct vertex hull[MAX_SIZE];
 
 void push(struct vertex v)
 {
@@ -314,7 +315,7 @@ void move(int starti,int startj,int scale)
 	occupy=0;
 	occup=0;
 	a1=0;a2=0;a3=0;a4=0;a5=0;a6=0;a7=0;a8=0;
-	for(x=1;x<=pixel && (j+x)<1000;x++)
+	for(x=1;x<=pixel && (j+x)<MAX_SIZE0;x++)
 	{
 		if(img[i][j+x]<scale)
 		{
@@ -323,7 +324,7 @@ void move(int starti,int startj,int scale)
 			break;
 		}
 	}
-	for(x=1;x<=pixel && (i+x)<1000;x++)
+	for(x=1;x<=pixel && (i+x)<MAX_SIZE0;x++)
 	{
 		if(img[i+x][j]<scale)
 		{
@@ -371,9 +372,9 @@ void move(int starti,int startj,int scale)
 		a1=1;
 		a7=1;
 	}
-	for(x=1;x<=pixel && (i+x)<1000;x++)
+	for(x=1;x<=pixel && (i+x)<MAX_SIZE0;x++)
 	{
-		for(y=1;y<=pixel && (j+y)<1000;y++)
+		for(y=1;y<=pixel && (j+y)<MAX_SIZE0;y++)
 		{
 		if(img[i-x][j+y]<scale)
 		{
@@ -383,9 +384,9 @@ void move(int starti,int startj,int scale)
 		}
 	}
 	
-	for(x=1;x<=pixel && (i+x)<1000;x++)
+	for(x=1;x<=pixel && (i+x)<MAX_SIZE0;x++)
 	{
-		for(y=1;y<=pixel && (j+y)<1000;y++)
+		for(y=1;y<=pixel && (j+y)<MAX_SIZE0;y++)
 		{
 		if(img[i+x][j+y]<scale)
 		{
@@ -394,9 +395,9 @@ void move(int starti,int startj,int scale)
 		}
 		}
 	}
-	for(x=1;x<=pixel && (i+x)<1000;x++)
+	for(x=1;x<=pixel && (i+x)<MAX_SIZE0;x++)
 	{
-		for(y=1;y<=pixel && (j+y)<1000;y++)
+		for(y=1;y<=pixel && (j+y)<MAX_SIZE0;y++)
 		{
 		if(img[i+x][j-y]<scale)
 		{
@@ -405,9 +406,9 @@ void move(int starti,int startj,int scale)
 		}
 		}
 	}	
-	for(x=1;x<=pixel && (i+x)<1000;x++)
+	for(x=1;x<=pixel && (i+x)<MAX_SIZE0;x++)
 	{
-		for(y=1;y<=pixel && (j+y)<1000;y++)
+		for(y=1;y<=pixel && (j+y)<MAX_SIZE0;y++)
 		{
 		if(img[i-x][j-y]<scale)
 		{
@@ -558,7 +559,7 @@ void moveinner(int starti,int startj,int scale,int d)
 	occupy=0;
 	occup=0;
 	a1=1;a2=1;a3=1;a4=1;a5=1;a6=1;a7=1;a8=1;
-	for(x=1;x<=pixel && (j+x)<1000;x++)
+	for(x=1;x<=pixel && (j+x)<MAX_SIZE0;x++)
 	{
 		if(img[i][j+x]==scale)
 		{
@@ -567,7 +568,7 @@ void moveinner(int starti,int startj,int scale,int d)
 			break;
 		}
 	}
-	for(x=1;x<=pixel && (i+x)<1000;x++)
+	for(x=1;x<=pixel && (i+x)<MAX_SIZE0;x++)
 	{
 		if(img[i+x][j]==scale)
 		{
@@ -615,9 +616,9 @@ void moveinner(int starti,int startj,int scale,int d)
 		a1=0;
 		a7=0;
 	}
-	for(x=1;x<=pixel && (i+x)<1000;x++)
+	for(x=1;x<=pixel && (i+x)<MAX_SIZE0;x++)
 	{
-		for(y=1;y<=pixel && (j+y)<1000;y++)
+		for(y=1;y<=pixel && (j+y)<MAX_SIZE0;y++)
 		{
 		if(img[i-x][j+y]==scale)
 		{
@@ -627,9 +628,9 @@ void moveinner(int starti,int startj,int scale,int d)
 		}
 	}
 	
-	for(x=1;x<=pixel && (i+x)<1000;x++)
+	for(x=1;x<=pixel && (i+x)<MAX_SIZE0;x++)
 	{
-		for(y=1;y<=pixel && (j+y)<1000;y++)
+		for(y=1;y<=pixel && (j+y)<MAX_SIZE0;y++)
 		{
 		if(img[i+x][j+y]==scale)
 		{
@@ -638,9 +639,9 @@ void moveinner(int starti,int startj,int scale,int d)
 		}
 		}
 	}
-	for(x=1;x<=pixel && (i+x)<1000;x++)
+	for(x=1;x<=pixel && (i+x)<MAX_SIZE0;x++)
 	{
-		for(y=1;y<=pixel && (j+y)<1000;y++)
+		for(y=1;y<=pixel && (j+y)<MAX_SIZE0;y++)
 		{
 		if(img[i+x][j-y]==scale)
 		{
@@ -649,9 +650,9 @@ void moveinner(int starti,int startj,int scale,int d)
 		}
 		}
 	}	
-	for(x=1;x<=pixel && (i+x)<1000;x++)
+	for(x=1;x<=pixel && (i+x)<MAX_SIZE0;x++)
 	{
-		for(y=1;y<=pixel && (j+y)<1000;y++)
+		for(y=1;y<=pixel && (j+y)<MAX_SIZE0;y++)
 		{
 		if(img[i-x][j-y]==scale)
 		{
@@ -820,41 +821,41 @@ void printhull()
 			
 
 
-int main()
+int main()//driver program
 {
 
 	
-	char a[100],filetype[100],ch;
+	char a[MAX_SIZE],filetype[MAX_SIZE],ch;
 	char s1[10]="P2",s2[10]="P5";
 	int scale,i,j,starti,startj,flag=0,dummy,num_dark=0,val_dark=0,avg;
 	printf("enter grid size : ");
 	scanf("%d",&pixel);
 	FILE *f=fopen("p2/dance.pgm","r"),*f3=fopen("test.pgm","w");//opening files
 	
-	fgets(a,100,f);
+	fgets(a,MAX_SIZE,f);
 	strcpy(filetype,a);
 	fprintf(f3,"%s",a);
 	if(filetype[1]=='2')
 	{
-		fgets(a,100,f);
+		fgets(a,MAX_SIZE,f);
 		fprintf(f3,"%s",a);
 	}
 	fscanf(f,"%s",a);
 	width=atoi(a);
 	//fprintf(f3,"%s ",a);
-	snprintf(a,100,"%d",width+2+2*pixel);
+	snprintf(a,MAX_SIZE,"%d",width+2+2*pixel);
 	fprintf(f3,"%s ",a);
 	fscanf(f,"%s",a);
 	height=atoi(a);
 	//fprintf(f3,"%s\n",a);
-	snprintf(a,100,"%d",height+2+2*pixel);
+	snprintf(a,MAX_SIZE,"%d",height+2+2*pixel);
 	fprintf(f3,"%s\n",a);
 	fscanf(f,"%s",a);
 	fprintf(f3,"%s\n",a);
 	scale=atoi(a);
-	for(i=0;i<1000;i++)
+	for(i=0;i<MAX_SIZE0;i++)
 	{
-		for(j=0;j<1000;j++)
+		for(j=0;j<MAX_SIZE0;j++)
 		{
 			img[i][j]=scale;
 			duplicate[i][j]=scale;
@@ -961,7 +962,7 @@ int main()
 		count=0;
 		
 		a1=1;a2=1;a3=1;a4=1;a5=1;a6=1;a7=1;a8=1;
-		for(x=1;x<=pixel && (j+x)<1000;x++)
+		for(x=1;x<=pixel && (j+x)<MAX_SIZE0;x++)
 		{
 			if(img[i][j+x]==scale)
 			{
@@ -971,7 +972,7 @@ int main()
 				break;
 			}
 		}
-		for(x=1;x<=pixel && (i+x)<1000;x++)
+		for(x=1;x<=pixel && (i+x)<MAX_SIZE0;x++)
 		{
 			if(img[i+x][j]==scale)
 			{
@@ -1022,9 +1023,9 @@ int main()
 			a1=0;
 			a7=0;
 		}
-	for(x=1;x<=pixel && (i+x)<1000;x++)
+	for(x=1;x<=pixel && (i+x)<MAX_SIZE0;x++)
 	{
-		for(y=1;y<=pixel && (j+y)<1000;y++)
+		for(y=1;y<=pixel && (j+y)<MAX_SIZE0;y++)
 		{
 		if(img[i-x][j+y]==scale)
 		{
@@ -1034,9 +1035,9 @@ int main()
 		}
 	}
 	
-	for(x=1;x<=pixel && (i+x)<1000;x++)
+	for(x=1;x<=pixel && (i+x)<MAX_SIZE0;x++)
 	{
-		for(y=1;y<=pixel && (j+y)<1000;y++)
+		for(y=1;y<=pixel && (j+y)<MAX_SIZE0;y++)
 		{
 		if(img[i+x][j+y]==scale)
 		{
@@ -1045,9 +1046,9 @@ int main()
 		}
 		}
 	}
-	for(x=1;x<=pixel && (i+x)<1000;x++)
+	for(x=1;x<=pixel && (i+x)<MAX_SIZE0;x++)
 	{
-		for(y=1;y<=pixel && (j+y)<1000;y++)
+		for(y=1;y<=pixel && (j+y)<MAX_SIZE0;y++)
 		{
 		if(img[i+x][j-y]==scale)
 		{
@@ -1056,9 +1057,9 @@ int main()
 		}
 		}
 	}	
-	for(x=1;x<=pixel && (i+x)<1000;x++)
+	for(x=1;x<=pixel && (i+x)<MAX_SIZE0;x++)
 	{
-		for(y=1;y<=pixel && (j+y)<1000;y++)
+		for(y=1;y<=pixel && (j+y)<MAX_SIZE0;y++)
 		{
 		if(img[i-x][j-y]==scale)
 		{
