@@ -842,16 +842,19 @@ void moveinner(int starti,int startj,int scale,int d)
 }			
 
 
-int main()
+int main(int argc,char *argv[])
 {
 
 	f2=fopen("cover.txt","w");
-	char a[100],filetype[100],ch;
+	char a[100],filetype[100],ch,source_image[100];
 	char s1[10]="P2",s2[10]="P5";
 	int scale,i,j,starti,startj,flag=0,dummy,num_dark=0,val_dark=0,avg;
 	printf("enter grid size : ");
 	scanf("%d",&pixel);
-	FILE *f=fopen("source_images/dance.pgm","r"),*f3=fopen("output.pgm","w");//opening files
+	strcpy(source_image,"source_images/");
+	strcat(source_image,argv[1]);
+	printf("no of args is %d\n",argc);
+	FILE *f=fopen(source_image,"r"),*f3=fopen("output.pgm","w");//opening files
 	
 	fgets(a,100,f);
 	strcpy(filetype,a);
