@@ -1,15 +1,15 @@
+<h3>PROJECT REPORT</h3>
 
-
-<h4>1. PROBLEM STATEMENT</h4>
+<h4>1. Problem Statement</h4>
 
 Given a 2D digital image in PGM (binary/ascii), the problem is to find the outer isothetic cover, inner isothetic cover and the convex hull. The image is registered on a gird of horizontal and vertical lines whose size (grid size) is determined by user input. 
 
-<h4>2. INTRODUCTION</h4>
+<h4>2. Introduction</h4>
 
 Determination of the (minimum) maximum-area (outer) inner isothetic cover corresponding to a 2D digital object is a problem of practical relevance to various fields. Given a set of isothetic grid lines under the object plane, an isothetic cover corresponds to a collection of isothetic polygons, which bears a structural and geometric relation with the concerned object, and hence can be useful to many interesting applications, such as VLSI layout design, computation of a minimum-area safety region, referred as the classical safety zone problem, may be necessary to ensure the correctness of design rules before fabricating an integrated circuit.
 
 
-<h5>2.1 IMPORTANT TERMS AND DEFINITIONS</h5>
+<h5>2.1 Important terms and definitions</h5>
 
 Isothetic polygon-An isothetic polygon is a polygon whose alternate sides belong to two parametric families of straight lines. The most well-known example of isothetic polygons are rectilinear polygons, and the former term is commonly used as a synonym for the latter one. For this problem, rectilinear polygons are considered, with the 2 families being parallel to the x-axis and the y-axis.
 
